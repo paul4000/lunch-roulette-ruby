@@ -1,13 +1,14 @@
 
   <div class="jumbotron">
+
     <%= form_for(user) do |f| %>
       <% if user.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <p class="text-danger"><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</p>
 
           <ul>
             <% user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
+              <li><p class="text-danger"><%= message %></p></li>
             <% end %>
           </ul>
         </div>
