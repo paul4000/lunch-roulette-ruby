@@ -9,6 +9,21 @@
   </head>
 
   <body>
+
+  <%= render "layouts/menu" %>
+
+  <div class="container" style="padding: 30px">
+
+    <%if notice%>
+      <p id="notice" class="text-success">
+        <%= notice %>
+      </p>
+
+    <%end%>
+
     <%= yield %>
+
+  </div>
+
   </body>
 </html>
