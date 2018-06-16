@@ -3,7 +3,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, :email_format => {:message => 'Wrong format email'}
-  validates :email, presence: true
   validates :email, uniqueness: true
 
 end
