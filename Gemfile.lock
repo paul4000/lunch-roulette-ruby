@@ -39,6 +39,9 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    auto_increment (1.5.0)
+      activerecord (>= 4.0, < 5.3)
+      activesupport (>= 4.0, < 5.3)
     autoprefixer-rails (8.5.2)
       execjs
     bcrypt (3.1.11-x86-mingw32)
@@ -163,6 +166,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  auto_increment
   bcrypt (~> 3.1.7)
   bootstrap
   byebug
