@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :unit %>
-    <%= f.text_field :unit %>
+    <%= f.select :unit, options_for_select(%w(kilo teaspoon liter pinch)) %>
   </div>
 
   <div class="actions">

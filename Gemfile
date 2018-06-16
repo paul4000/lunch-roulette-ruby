@@ -45,3 +45,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap'
 gem 'validates_email_format_of'
+gem 'cocoon'

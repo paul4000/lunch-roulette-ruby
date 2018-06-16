@@ -5,5 +5,11 @@
   <%= @recipe.title %>
 </p>
 
+<p>Ingredients: </p>
+<%= f.association :ingredients %>
+
+<p>Steps: </p>
+<%= f.association :steps %>
+
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
