@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   post 'randoms/shopping_list', to: 'randoms#send_shopping_list', as: :random_list
+
+  get '*unmatched_route', to: 'application#not_found'
 end
