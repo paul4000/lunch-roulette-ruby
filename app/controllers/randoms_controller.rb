@@ -10,9 +10,12 @@ class RandomsController < ApplicationController
 
   def send_shopping_list
     @user = current_user
-    RecipeMailer.recipe_email(@user, params[:recipe]).deliver
 
-    flash[:notice] = "Shopping list sent!"
+    recipe = Recipe.find(params[:recipe_id])
+
+    RecipeMailer.recipe_email(@user, recipe).deliver!
+
+    flash.now[:notice] = 'Message sent!'
 
   end
 

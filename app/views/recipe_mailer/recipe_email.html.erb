@@ -4,7 +4,16 @@
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
- <p>@recipe.title</p>
-<p>dupaaa</p>
+ <p> <%= @recipe.title %></p>
+
+ <ul>
+   <% @recipe.ingredients.each do |ingredient| %>
+     <li><%= ingredient.name %> <%= ingredient.quantity %> <%= ingredient.unit %></li>
+   <% end %>
+ </ul>
+
+<div style="margin-top: 30px;">
+  <p>Regards, LunchRoulette Team</p>
+</div>
 </body>
 </html>
