@@ -1,14 +1,21 @@
-<div class="field">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div>
+<div class="row nested-fields">
 
-<div class="field">
-  <%= f.label :quantity %>
-  <%= f.number_field :quantity %>
-</div>
+  <div class="field col-md-4">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
 
-<div class="field">
-  <%= f.label :unit %>
-  <%= f.select :unit, options_for_select(%w(kilo teaspoon liter pinch)) %>
+  <div class="field col-md-2">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, min:1, class: "form-control" %>
+  </div>
+
+  <div class="field col-md-2">
+    <%= f.label :unit %>
+    <%= f.select :unit, options_for_select(%w(kilo teaspoon liter pinch)), {}, {:class => "custom-select"} %>
+  </div>
+
+  <div class="field col-md-1">
+    <%= link_to_remove_association "Delete", f %>
+  </div>
 </div>
