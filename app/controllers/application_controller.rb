@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def redirect_to_login
+  	redirect_to new_session_path
+  end
+
 end
