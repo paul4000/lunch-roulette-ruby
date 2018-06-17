@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def redirect_to_login
-  	redirect_to new_session_path
+    redirect_to login_path
   end
 
 end
