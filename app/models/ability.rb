@@ -8,7 +8,7 @@ class Ability
 
     can [:new, :create], User
 
-    if user.admin?
+    if user.try(:admin?)
       can :manage, :all
     else
       can :manage, [Recipe, Random]

@@ -33,8 +33,4 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
   end
 
-  # def authenticate_admin
-  #   raise ActionController:: unless current_user.try(:admin?)
-  # end
-
 end
