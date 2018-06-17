@@ -3,11 +3,11 @@
   <%= form_for(recipe) do |f| %>
     <% if recipe.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+        <p class="text-danger"><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</p>
 
         <ul>
           <% recipe.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+            <li><p class="text-danger"><%= message %></p></li>
           <% end %>
         </ul>
       </div>
