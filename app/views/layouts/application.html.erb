@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>LunchRouletteRuby</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>LunchRouletteRuby</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
 
-  <%= render "layouts/menu" %>
+<%= render "layouts/menu" %>
 
-  <div class="container" style="padding: 30px">
-
-    <%if notice%>
+<div class="container" style="padding: 30px">
+  <div class="row justify-content-center">
+    <% if notice %>
       <p id="notice" class="text-success">
         <%= notice %>
       </p>
 
-    <%end%>
-
-    <%= yield %>
-
+    <% end %>
   </div>
+  <%= yield %>
 
-  </body>
+</div>
+
+</body>
 </html>
