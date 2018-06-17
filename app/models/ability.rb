@@ -6,10 +6,12 @@ class Ability
     #
     #   user ||= User.new # guest user (not logged in)
 
-    can [:read, :new, :create], User
+    can [:new, :create], User
 
-    if user
+    if user.admin?
       can :manage, :all
+    else
+      can :manage, [Recipe, Random]
     end
     #
     # The first argument to `can` is the action you are giving the user

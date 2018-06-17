@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::UnknownController, with: :not_found
   rescue_from AbstractController::ActionNotFound, with: :not_found
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
-  rescue_from CanCan::AccessDenied, with: :redirect_to_login
+  rescue_from CanCan::AccessDenied, with: :access_denied
 
   def not_found 
     respond_to do |format|
@@ -12,7 +12,15 @@ class ApplicationController < ActionController::Base
       format.xml  { head 404 }
       format.any  { head 404 }
     end
-  end  
+  end
+
+  def access_denied
+    if current_user
+      not_found
+    else
+      redirect_to_login
+    end
+  end
 
   private
 
@@ -24,5 +32,9 @@ class ApplicationController < ActionController::Base
   def redirect_to_login
   	redirect_to new_session_path
   end
+
+  # def authenticate_admin
+  #   raise ActionController:: unless current_user.try(:admin?)
+  # end
 
 end
