@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get 'random', :controller => 'randoms', :action => 'random'
 
   resources :recipes
-  resources :steps
-  resources :ingredients
   resources :users
   resources :sessions
   resource :randoms
