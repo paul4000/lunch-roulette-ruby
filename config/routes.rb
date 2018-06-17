@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   # get 'random_list', :controller => 'randoms', :action => 'send_shopping_list'
 
   resources :recipes
-  resources :steps
-  resources :ingredients
   resources :users
   resources :sessions
   resource :randoms

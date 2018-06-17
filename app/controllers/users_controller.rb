@@ -30,7 +30,12 @@ class UsersController < ApplicationController
       if @user.save
         # SessionsController.create email: @user.email, password: @user.password_digest
 
-        format.html {redirect_to @user, notice: 'User was successfully created.'}
+        format.html {
+          session[:user_id] = @user.id
+          flash[:notice] = "Hello #{@user.name}"
+          redirect_to recipes_path
+          # redirect_to @user, notice: 'User was successfully created.'
+        }
         format.json {render :show, status: :created, location: @user}
       else
         format.html {render :new}
