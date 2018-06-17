@@ -1,0 +1,34 @@
+
+
+  <p>
+    <strong>
+      <%= recipe.title %>
+    </strong>
+  </p>
+
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Ingredients</h5>
+      </div>
+
+      <ul>
+        <% recipe.ingredients.each do |ingredient| %>
+          <li><%= ingredient.name %> <%= ingredient.quantity %> <%= ingredient.unit %></li>
+        <% end %>
+      </ul>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Steps</h5>
+      </div>
+
+      <ol>
+        <% recipe.steps.sort_by {|s| s[:order_number]}.each do |step| %>
+          <li><%= step.description %></li>
+        <% end %>
+      </ol>
+
+    </a>
+  </div>
+
