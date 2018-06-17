@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get '/login' => 'sessions#new'
 
-  get 'sessions/create'
+  post '/login' => 'sessions#create'
 
-  get 'sessions/destroy'
+  get '/logout' => 'sessions#destroy'
 
-  get 'randoms', :controller => 'randoms', :action => 'index'
-  get 'random', :controller => 'randoms', :action => 'random'
-  # get 'random_list', :controller => 'randoms', :action => 'send_shopping_list'
+  get 'randoms' => 'randoms#index'
+  get 'random' => 'randoms#random'
 
   resources :recipes
   resources :users
-  resources :sessions
-  resource :randoms
 
   root 'sessions#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
