@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Recipes</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Title</th>
@@ -14,9 +12,9 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.title %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to (fa_icon "eye"), recipe %></td>
+        <td><%= link_to (fa_icon "edit"), edit_recipe_path(recipe) %></td>
+        <td><%= link_to (fa_icon "trash"), recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +22,3 @@
 
 <br>
 
-<%= link_to 'New Recipe', new_recipe_path %>
