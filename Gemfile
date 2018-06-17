@@ -49,3 +49,4 @@ gem 'cocoon'
 gem 'auto_increment'
 gem 'cancancan'
 gem 'figaro'
+gem "font-awesome-rails"
