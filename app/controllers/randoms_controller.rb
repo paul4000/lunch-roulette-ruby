@@ -16,8 +16,9 @@ class RandomsController < ApplicationController
 
     RecipeMailer.recipe_email(@user, recipe).deliver!
 
-    flash.now[:notice] = 'Message sent!'
-
+    respond_to do |format|
+      format.js
+    end
   end
 
   def random

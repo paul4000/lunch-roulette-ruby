@@ -31,6 +31,9 @@
 
     </a>
   </div>
-  <!--<button class="btn btn-success">-->
-    <%= button_to "Send me shopping list", random_list_path(:recipe_id => recipe), mthod: :post, class: "btn btn-success"%>
-  <!--</button>-->
+  <div class="center margin-top">
+  <%= link_to "Send me shopping list", random_list_path(:recipe_id => recipe), :remote => true, class: "btn btn-success"%>
+  <p id="notice" class="text-success" hidden>
+    Message was sent successfully.
+  </p>
+  </div>      
