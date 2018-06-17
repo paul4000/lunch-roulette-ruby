@@ -1,4 +1,4 @@
-
+<% if recipe %>
 
   <p>
     <h4>
@@ -7,7 +7,7 @@
   </p>
 
   <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="list-group-item flex-column align-items-start active">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Ingredients</h5>
       </div>
@@ -17,8 +17,8 @@
           <li><%= ingredient.name %> <%= ingredient.quantity %> <%= ingredient.unit %></li>
         <% end %>
       </ul>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    </div>
+    <div class="list-group-item flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Steps</h5>
       </div>
@@ -28,12 +28,18 @@
           <li><%= step.description %></li>
         <% end %>
       </ol>
-
-    </a>
+    </div>
   </div>
   <div class="center margin-top">
   <%= link_to "Send me shopping list", random_list_path(:recipe_id => recipe), :remote => true, class: "btn btn-success"%>
   <p id="notice" class="text-success" hidden>
     Message was sent successfully.
   </p>
-  </div>      
+  </div>  
+
+<% else %>
+  <div class="center margin-top">
+    <h2>You have no recipes.</h2>
+    <h2>Please create some first.</h2>
+  </div>
+<% end %>
