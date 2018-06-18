@@ -12,7 +12,7 @@
 
   <div class="field col-md-2">
     <%= f.label :unit %>
-    <%= f.select :unit, options_for_select(%w(kilo teaspoon liter pinch)), {}, {:class => "custom-select"} %>
+    <%= f.select :unit, options_for_select(%w(kilo teaspoon liter pinch cup)), {:include_blank => true}, {:class => "custom-select"} %>
   </div>
 
   <div class="field col-md-1">
